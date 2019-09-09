@@ -6,14 +6,19 @@ import { Button } from "@material-ui/core";
 
 const PlayerArea = props => {
     
-    const {score, updateScore, name} = props;
+    const {score, updateScore, name, showGame} = props;
+
     const increaseScore = () => {
+       
         updateScore(score + 1);
     };
+   
 
     return (
         <div>
-            <Paper className="paper">
+            {
+                showGame &&
+                <Paper className="paper">
                 <Typography variant="h2">
                     {name}
                 </Typography>
@@ -22,8 +27,12 @@ const PlayerArea = props => {
                     {score}
                 </div>
                 </Typography>
-                <Button color="primary" variant="contained" onClick={increaseScore}>Score</Button>
+                {
+                    !(score === 5) &&
+                    <Button color="primary" variant="contained" onClick={increaseScore}>Score</Button>
+                }
             </Paper>
+            }
         </div>
     );
 
