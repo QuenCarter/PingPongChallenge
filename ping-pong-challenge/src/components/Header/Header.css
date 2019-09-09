@@ -1,0 +1,6 @@
+.header-root, .header-title {
+    flex-grow: 1;
+}
+.header-title {
+    text-align: left;
+}
