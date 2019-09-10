@@ -4,3 +4,9 @@
 .header-title {
     text-align: left;
 }
+
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+}

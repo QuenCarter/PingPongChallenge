@@ -1,12 +1,40 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import {getGameRecords} from "../../services/game-service";
+import { Paper, Table, TableHead, TableRow, TableBody, TableCell } from "@material-ui/core"
 
-class Leaderboard extends React.Component{
-    render(){
-        return(
-            <div>
-                <h1>This is the leaderboard</h1>
-            </div>
-        );
-    }
+const Leaderboard = () => {
+    const [gameRecords, setGameRecords] = useState([]);
+    
+    getGameRecords(setGameRecords);    
+
+
+    return (
+        <div>
+            <Paper>
+                <Table>
+                    <TableHead>
+                        <TableRow>
+                            <TableCell>Rank</TableCell>
+                            <TableCell>Player</TableCell>
+                            <TableCell>Wins</TableCell>
+                            <TableCell>Losses</TableCell>
+                        </TableRow>
+                    </TableHead>
+                    <TableBody>
+                        {
+                            gameRecords.map(gameRecord => (
+                                <TableRow key={gameRecord._id}>
+                                    <TableCell>{gameRecord.rank}</TableCell>
+                                    <TableCell>{gameRecord.player}</TableCell>
+                                    <TableCell>{gameRecord.wins}</TableCell>
+                                    <TableCell>{gameRecord.losses}</TableCell>
+                                </TableRow>
+                            ))
+                        }
+                    </TableBody>
+                </Table>
+            </Paper>
+        </div>
+    );
 }
 export default Leaderboard;
