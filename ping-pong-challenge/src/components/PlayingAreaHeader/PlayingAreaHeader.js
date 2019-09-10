@@ -1,10 +1,11 @@
 import React from "react";
 import { Typography } from "@material-ui/core";
+import "./PlayingAreaHeader.css";
 
 const PlayingAreaHeader = props => {
     const {score, isWinner, winner} = props;
     return (
-        <div>
+        <div className="playingHeader">
             {
                 !isWinner &&
                 <Typography variant="h3">

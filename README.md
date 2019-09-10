@@ -17,6 +17,8 @@ Coding Challenge: Ping Pong
 - validation on text inputs i.e. "Playing Up To" should only be assigned numerical values greater than 0.
 - enforce uniqueness on teams' name i.e gamer tag
 - implement logic for when players are tied
+- make it responsive
+- "prettyify" the app :)
 
 
 

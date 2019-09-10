@@ -49,14 +49,14 @@ function Home() {
         if (playerOneScore === playingToScore) {
           setWinner(playerOneName);
           updateGameRecord({ player: playerOneName, wins: 1, losses: 0 },
-          () => updateGameRecord({ player: playerTwoName, wins: 0, losses: 1 }
+            () => updateGameRecord({ player: playerTwoName, wins: 0, losses: 1 }
             ));
         }
         if (playerTwoScore === playingToScore) {
           setWinner(playerTwoName);
-          updateGameRecord({ player: playerTwoName, wins: 1, losses: 0 }, 
-          () => updateGameRecord({ player: playerOneName, wins: 0, losses: 1 }
-              ));
+          updateGameRecord({ player: playerTwoName, wins: 1, losses: 0 },
+            () => updateGameRecord({ player: playerOneName, wins: 0, losses: 1 }
+            ));
 
         }
 
@@ -93,19 +93,21 @@ function Home() {
             winner={winner}>
           </PlayingAreaHeader>
 
-          <PlayerArea
-            name={playerOneName}
-            updateScore={setPlayerOneScore}
-            score={playerOneScore}
-            isWinner={isWinner}>
-          </PlayerArea>
+          <div className="scoreboardDiv">
+            <PlayerArea
+              name={playerOneName}
+              updateScore={setPlayerOneScore}
+              score={playerOneScore}
+              isWinner={isWinner}>
+            </PlayerArea>
 
-          <PlayerArea
-            name={playerTwoName}
-            updateScore={setPlayerTwoScore}
-            score={playerTwoScore}
-            isWinner={isWinner}>
-          </PlayerArea>
+            <PlayerArea
+              name={playerTwoName}
+              updateScore={setPlayerTwoScore}
+              score={playerTwoScore}
+              isWinner={isWinner}>
+            </PlayerArea>
+          </div>
         </>
       }
       <ResetButton isWinner={isWinner} setShowGame={setShowGame} gameVisible={gameVisible} cleanUp={cleanUp}></ResetButton>

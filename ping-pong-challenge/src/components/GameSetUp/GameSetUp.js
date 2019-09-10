@@ -1,5 +1,7 @@
 import React from "react";
-import { Paper, Typography, Button } from "@material-ui/core";
+import './GameSetUp.css'
+
+import { Paper, Typography, Button, TextField } from "@material-ui/core";
 
 const GameSetUp = (props) => {
     const { updatePlayerOneName, updatePlayerTwoName,
@@ -28,14 +30,45 @@ const GameSetUp = (props) => {
         <div>
             {
                 !showGame &&
-                <Paper>
-                    <Typography variant="h3">
+                <Paper className="gameSetUp">
+                    <Typography variant="h4">
                         Game Set Up
                 </Typography>
-                    <input placeholder="Enter Team One's Name" onChange={addPlayerOneName} value={isInit ? undefined : playerOneName} />
-                    <input placeholder="Enter Team Two's Name" onChange={addPlayerTwoName} value={isInit ? undefined : playerTwoName} />
-                    <input type="number" placeholder="playing up to ... " value={score} onChange={increasePlayingTo}></input>
-                    <Button color="primary" variant="contained" onClick={startGame}> Start Game</Button>
+                    <div>
+                        <TextField
+                            variant="outlined"
+                            label="Team One Name"
+                            placeholder="Enter Team's One name"
+                            value={isInit ? undefined : playerOneName}
+                            margin="normal"
+                            onChange={addPlayerOneName}
+                        />
+                    </div>
+
+                    <div>
+                        <TextField
+                            variant="outlined"
+                            label="Team Two Name"
+                            placeholder="Enter Team Two's Name"
+                            value={isInit ? undefined : playerTwoName}
+                            margin="normal"
+                            onChange={addPlayerTwoName} />
+
+                    </div>
+
+                    <div>
+                        <TextField
+                            variant="outlined"
+                            label="Playing up to"
+                            type="number"
+                            value={score}
+                            onChange={increasePlayingTo}
+                            margin="normal" />
+                    </div>
+                    <div className="gameBtnDiv">
+                        <Button color="primary" variant="contained" onClick={startGame}> Start Game</Button>
+                    </div>
+
                 </Paper>
             }
 

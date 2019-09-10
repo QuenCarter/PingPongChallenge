@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import {getGameRecords} from "../../services/game-service";
+import "./Leaderboard.css"
 import { Paper, Table, TableHead, TableRow, TableBody, TableCell } from "@material-ui/core"
 
 const Leaderboard = () => {
@@ -10,7 +11,7 @@ const Leaderboard = () => {
 
     return (
         <div>
-            <Paper>
+            <Paper className="leaderboard">
                 <Table>
                     <TableHead>
                         <TableRow>

@@ -2,4 +2,8 @@
     text-align: center;
   }
   
-  
+.scoreboardDiv {
+  display:flex;
+  flex-direction: row;
+  justify-content: space-around;
+}  

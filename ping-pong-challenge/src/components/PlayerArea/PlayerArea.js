@@ -15,7 +15,7 @@ const PlayerArea = props => {
 
 
     return (
-        <div>
+        <div className="scoreboardDiv">
             <Paper className="paper">
                 <Typography variant="h2">
                     {name}
@@ -27,7 +27,7 @@ const PlayerArea = props => {
                 </Typography>
                 {
                     !isWinner &&
-                    <Button color="primary" variant="contained" onClick={increaseScore}>Score</Button>
+                    <Button size="large" color="primary" variant="contained" onClick={increaseScore}>Score</Button>
                 }
             </Paper>
         </div >
