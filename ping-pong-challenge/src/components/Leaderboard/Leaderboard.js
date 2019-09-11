@@ -5,8 +5,10 @@ import { Paper, Table, TableHead, TableRow, TableBody, TableCell } from "@materi
 
 const Leaderboard = () => {
     const [gameRecords, setGameRecords] = useState([]);
-    
-    getGameRecords(setGameRecords);    
+
+    useEffect(() => {
+        getGameRecords(setGameRecords);
+    }, []);
 
 
     return (
